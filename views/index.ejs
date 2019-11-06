@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+
+<%console.log("whatcha doin' in my waters?")%>
+
+<body>
+    <div class="container">
+        <div class="music">
+            <% music.forEach( function (music) { %>
+            <div class="card">
+                <h4> <%= music.bandName  %></h5>
+                    <h5><%=music.albumName%></h5>
+                    <h6><%=music.trackName %></h6>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+    <a href="/music/new">CLICK TO MAKE NEW</a>
+</body>
+
+</html>
