@@ -10,7 +10,10 @@ const PORT = process.env.PORT || 3000
 // DATABASE
 mongoURI = process.env.MONGOURI || 'mongodb://localhost/records'
 // CONNECT TO DATABASE
-mongoose.connect(mongoURI)
+mongoose.connect(MONGOURI, { useNewUrlParser: true })
+mongoose.connection.once('open', () => {
+    console.log('telegram for mongo');
+});
 // SET CONNECTION TO CONST VAR
 const db = mongoose.connection
 // DON'T KNOW WHAT THIS IS. ERROR MESSAGE STUFF OR SOMETHING
@@ -30,10 +33,8 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use('/music', musicController)
-mongoose.connect(MONGOURI, { useNewUrlParser: true })
-mongoose.connection.once('open', () => {
-    console.log('telegram for mongo');
-});
+
+
 // GET
 app.get('/', (req, res) => {
     res.redirect('/music')
