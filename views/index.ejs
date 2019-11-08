@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-
-    <title>Document</title>
+    <%include ./partials/head.ejs%>
 </head>
 
-<%console.log("whatcha doin' in my waters?")%>
-
 <body>
+    <nav>
+        <%include ./partials/nav.ejs%>
+    </nav>
     <div class="container">
-        <div class="music">
-            <% music.forEach( function (music) { %>
+        <h2>Buy some stuff. Unfortunately we don't have mongoose in stock today.</h2>
+        <div class="records">
+            <% music.forEach( function (record) { %>
             <div class="card">
-                <h4> <%= music.bandName  %></h5>
-                    <h5><%=music.albumName%></h5>
-                    <h6><%=music.trackName %></h6>
+                <h5> <%= music.name  %></h5>
+                <a href="/music/<%=music.id%>">
+                    <img src="<%= music.img %>" alt="An image of <%= music.name %>" /></a>
+                <h6>Price: $<%=music.price %></h6>
             </div>
             <% }); %>
         </div>
     </div>
-    <a href="/music/new">CLICK TO MAKE NEW</a>
+
 </body>
 
 </html>

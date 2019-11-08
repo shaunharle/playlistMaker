@@ -1,16 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-
-    <title>Document</title>
+    <%include ./partials/head.ejs%>
 </head>
 
 <body>
-    <%=music.bandName%>
-    <%=music.albumName%>
-    <%=music.trackName%>
+    <nav>
+        <%include ./partials/nav.ejs%>
+    </nav>
+    <div class="container">
+        <h2>WOW this <%=music.name%> is only $<%=music.price%>! What a steal! You should buy it.</h2>
+        <div class="jumbo">
+            <h3> <%= music.name  %></h3>
+            <img src="<%= music.img %>" alt="An image of <%= music.name %>" class="jumbo-img" />
+            <p><%=music.description %></p>
+            <% if (music.qty <= 0) { %>
+            <h4 class="out-of-stock"> OUT OF STOCK </h4>
+            <% } else   { %>
+            <h6>Only <%= music.qty %> remaining</h6>
+            <form action="/music/<%=music.id%>/buy?_method=put" method="POST">
+                <button class="buy-button">Buy</button>
+            </form>
+            <h4>Price: $<%=music.price %></h4>
+            <% } %>
+        </div>
+        <div class="admin-actions">
+            <a href="/music/<%=music.id%>/edit"><button type="button" name="button"
+                    class="edit-button">Edit</button></a>
+            <form action="/music/<%=music.id%>?_method=DELETE" method="POST">
+                <button class="delete-button">DELETE</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
