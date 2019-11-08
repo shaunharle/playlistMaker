@@ -30,7 +30,7 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use('/music', musicController)
-
+mongoose.connect(MONGOURI, { useNewUrlParser: true })
 mongoose.connection.once('open', () => {
     console.log('telegram for mongo');
 });
