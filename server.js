@@ -6,11 +6,11 @@ const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const app = express()
 // PORT
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 // DATABASE
-mongoURI = process.env.MONGOURI || 'mongodb://localhost/records'
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/records'
 // CONNECT TO DATABASE
-mongoose.connect(mongoURI, { useNewUrlParser: true })
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 mongoose.connection.once('open', () => {
     console.log('telegram for mongo');
 });
