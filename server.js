@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000
 // DATABASE
 mongoURI = process.env.MONGOURI || 'mongodb://localhost/records'
 // CONNECT TO DATABASE
-mongoose.connect(MONGOURI, { useNewUrlParser: true })
+mongoose.connect(mongoURI, { useNewUrlParser: true })
 mongoose.connection.once('open', () => {
     console.log('telegram for mongo');
 });
