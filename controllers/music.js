@@ -34,9 +34,9 @@ music.get('/json', (req, res) => {
 
 // Index  : GET    '/music'          1/7
 music.get('/', (req, res) => {
-    Records.find({}, (err, records) => {
+    Records.find({}, (err, music) => {
         if (err) { console.log(err); }
-        res.render('index.ejs', { records });
+        res.render('index.ejs', { music });
     });
 });
 
