@@ -10,9 +10,9 @@
         <%include ./partials/nav.ejs%>
     </nav>
     <div class="container">
-        <h2>WOW this <%=music.name%> is only $<%=music.price%>! What a steal! You should buy it.</h2>
+        <h2>WOW this <%=music.name%> record is only $<%=music.price%>! What a steal! You should buy it.</h2>
         <div class="jumbo">
-            <h3> <%= music.name  %></h3>
+            <h3> <%= music.name  %> - <%=music.albumTitle%></h3>
             <img src="<%= music.img %>" alt="An image of <%= music.name %>" class="jumbo-img" />
             <p><%=music.description %></p>
             <% if (music.qty <= 0) { %>
@@ -22,7 +22,7 @@
             <form action="/music/<%=music.id%>/buy?_method=put" method="POST">
                 <button class="buy-button">Buy</button>
             </form>
-            <h4>Price: $<%=music.price %></h4>
+            <h4>Asking price: $<%=music.price %></h4>
             <% } %>
         </div>
         <div class="admin-actions">

@@ -10,11 +10,11 @@
         <%include ./partials/nav.ejs%>
     </nav>
     <div class="container">
-        <h2>Buy some stuff. Unfortunately we don't have mongoose in stock today.</h2>
+        <h2>Your record collection!</h2>
         <div class="records">
-            <% music.forEach( function (record) { %>
+            <% music.forEach( function (music) { %>
             <div class="card">
-                <h5> <%= music.name  %></h5>
+                <h5> <%= music.name  %> - <%=music.albumTitle%></h5>
                 <a href="/music/<%=music.id%>">
                     <img src="<%= music.img %>" alt="An image of <%= music.name %>" /></a>
                 <h6>Price: $<%=music.price %></h6>

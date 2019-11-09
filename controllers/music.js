@@ -23,13 +23,13 @@ music.get('/json', (req, res) => {
 //___________________
 //7 Restful Routes
 //___________________
-// Index  : GET    '/products'          1/7
-// Show   : GET    '/products/:id'      2/7
-// New    : GET    '/prodcuts/new'      3/7
-// Create : POST   '/products'          4/7
-// Edit   : GET    '/products/:id/edit' 5/7
-// Update : PUT    '/products/:id'      6/7
-// Delete : DELETE '/products/:id'      7/7
+// Index  : GET    '/music'          1/7
+// Show   : GET    '/music/:id'      2/7
+// New    : GET    '/music/new'      3/7
+// Create : POST   '/music'          4/7
+// Edit   : GET    '/music/:id/edit' 5/7
+// Update : PUT    '/music/:id'      6/7
+// Delete : DELETE '/music/:id'      7/7
 
 
 // Index  : GET    '/music'          1/7
@@ -48,15 +48,15 @@ music.get('/new', (req, res) => {
 
 // Show   : GET    '/music/:id'      2/7
 music.get('/:id', (req, res) => {
-    Records.findById(req.params.id, (err, record) => {
+    Records.findById(req.params.id, (err, music) => {
         if (err) { console.log(err); }
-        res.render('show.ejs', { record: record });
+        res.render('show.ejs', { music: music });
     });
 });
 
 // Create : POST   '/music'          4/7
 music.post('/', (req, res) => {
-    Records.create(req.body, (err, record) => {
+    Records.create(req.body, (err, music) => {
         if (err) { res.send(err); } else {
             res.redirect('/music/' + music.id);
         }
