@@ -10,8 +10,9 @@ const Schema = mongoose.Schema;
 const recordSchema = new Schema({
     name: {
         type: String,
-        required: [true, 'No one will buy it if it does not have a name']
+        required: true
     },
+    albumTitle: { type: String, required: true },
     description: String,
     img: String,
     price: {
