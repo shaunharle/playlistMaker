@@ -35,6 +35,12 @@ router.get('/:id/edit', (req, res) => {
         );
     });
 });
+router.put('/:id/buy', (req, res) => {
+    Records.findByIdAndUpdate(req.params.id, { $inc: { qty: -1 } }, (err, Records) => {
+        if (err) { console.log(err); }
+        res.redirect('back');
+    });
+});
 router.put('/:id', (req, res) => {
     //{new: true} tells mongoose to send the updated model into the callback
     Records.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel) => {
