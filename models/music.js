@@ -12,7 +12,6 @@ const recordSchema = new Schema({
         type: String,
         required: [true, 'No one will buy it if it does not have a name']
     },
-    albumTitle: String,
     description: String,
     img: String,
     price: {
@@ -21,7 +20,7 @@ const recordSchema = new Schema({
     },
     qty: {
         type: Number,
-        min: [0, 'Quantity can\'t be less than 0. No capitalist joyrides here!']
+        min: [0, 'Quantity can\'t be less than 0. No capatalist joyrides here!']
     }
 });
 
@@ -34,3 +33,7 @@ const Records = mongoose.model('Records', recordSchema);
 ////Module Exports - access Records in controllers/music.js
 //___________________
 module.exports = Records;
+
+
+
+

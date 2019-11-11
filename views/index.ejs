@@ -9,15 +9,17 @@
     <nav>
         <%include ./partials/nav.ejs%>
     </nav>
+    <br>
+    <br>
     <div class="container">
-        <h2>Your record collection!</h2>
+        <h2>Buy some stuff. We don't carry the Beatles. Ever.</h2>
         <div class="records">
-            <% music.forEach( function (music) { %>
+            <% Records.forEach( function (Records) { %>
             <div class="card">
-                <h5> <%= music.name  %> - <%=music.albumTitle%></h5>
-                <a href="/music/<%=music.id%>">
-                    <img src="<%= music.img %>" alt="An image of <%= music.name %>" /></a>
-                <h6>Price: $<%=music.price %></h6>
+                <h5> <%= Records.name  %></h5>
+                <a href="/music/<%=Records.id%>">
+                    <img src="<%= Records.img %>" alt="An image of <%= Records.name %>" /></a>
+                <h6>Price: $<%=Records.price %></h6>
             </div>
             <% }); %>
         </div>
