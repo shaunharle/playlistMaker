@@ -20,15 +20,15 @@
         <div class="records">
             <% Records.forEach( function (Records) { %>
 
-            <div class="card">
+            <a href="/music/<%=Records.id%>">
+                <div class="card">
 
-                <p> <%= Records.name%> - <%=Records.albumTitle  %></p>
+                    <p> <%= Records.name%> - <%=Records.albumTitle  %></p>
 
-                <a href="/music/<%=Records.id%>">
-                    <img src="<%= Records.img %>" alt="An image of <%= Records.name %>" /></a>
-                <h6>Price: $<%=Records.price %></h6>
-            </div>
-
+                    <img src="<%= Records.img %>" alt="An image of <%= Records.name %>" />
+                    <p>Price: $<%=Records.price %></p>
+                </div>
+            </a>
             <% }); %>
         </div>
     </div>
