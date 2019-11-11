@@ -12,7 +12,10 @@ const recordSchema = new Schema({
         type: String,
         required: true
     },
-    albumTitle: { type: String, required: true },
+    albumTitle: {
+        type: String,
+        required: true
+    },
     description: String,
     img: String,
     price: {
