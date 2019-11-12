@@ -17,5 +17,5 @@ I had a general idea for creating a database of albums and songs so I could crea
 ## Unsolved problems
 I can't get sessions or login to work. I spent the whole week struggling just to break it and then restart, and when I'd have something work properly I would think I was on the right track, but then it would break again. I would have liked to have users and the ability to comment on records or even submit an offer orr something, but I guess that just wasn't in the cards.
 
-## PERSONAL NOTES
+## Notes to the developer. From the developer.
 Come back and get the login and comments working. Hopefully an admin page/view as well. That'd be pretty neat, might be a good idea to just list all of your records and make TENS of dollars.
